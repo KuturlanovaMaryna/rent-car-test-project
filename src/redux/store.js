@@ -10,7 +10,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { carReducer } from './cars/cars.reducer';
+import { carReducer } from '../redux/cars/cars.slice';
 
 const persistConfig = {
   key: 'carrent',

@@ -16,7 +16,7 @@ export const CarItemStyles = styled.li`
     width: 100%;
     height: 268px;
     background: linear-gradient(
-      var(--secondary-text-color),
+      rgba(18, 20, 23, 0.5),
       rgba(18, 20, 23, 0)
     );
     border-radius: 14px;
@@ -46,17 +46,17 @@ export const CarItemStyles = styled.li`
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    color: var(--primary-text-color);
+    color: rgba(18, 20, 23, 1);
   }
 
   .title-container span {
-    color: var(--decoration-text-color);
+    color: rgba(52, 112, 255, 1);
   }
 
-  .more-info-container {
+  .more-info {
     font-size: 12px;
     line-height: 1.5;
-    color: var(--secondary-text-color);
+    color: rgba(18, 20, 23, 0.5);
   }
 
   .more-info-container span {
@@ -69,20 +69,20 @@ export const CarItemStyles = styled.li`
 
   .learn-more-btn {
     margin-top: auto;
-    background-color: var(--btn-bg-color);
+    background-color: #3470ff;
     border-radius: 8px;
-    color: var(--btn-text-color);
+    color: #ffffff;
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
     border: none;
-    transition: background-color var(--main-cubic);
+    transition: background-color 250ms linear;
   }
 
   .learn-more-btn:hover,
   .learn-more-btn:focus {
-    background-color: var(--btn-hover-bg-color);
+    background-color: background: #0B44CD;
   }
 `;

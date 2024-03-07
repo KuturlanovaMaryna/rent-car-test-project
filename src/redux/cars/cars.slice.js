@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getAllCars from '../cars/cars.reducer';
+import { getAllCars } from '../../../src/redux/cars/cars.reducer';
 
 const initialState = {
   carsData: null,
