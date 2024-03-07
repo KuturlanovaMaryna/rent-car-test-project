@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <Navigation>
-        <StyledLink to="/home">Home</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/catalog">Catalog</StyledLink>
         <StyledLink to="/favorites">Favorites</StyledLink>
       </Navigation>
