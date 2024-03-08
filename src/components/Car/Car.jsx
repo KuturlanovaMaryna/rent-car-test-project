@@ -1,6 +1,9 @@
+import Modal from '../Modal/Modal';
 import { CarItemStyles } from './Car.styled';
+import { useState } from 'react';
 
 const CarItem = ({ car }) => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
       <CarItemStyles>
@@ -24,8 +27,11 @@ const CarItem = ({ car }) => {
             <span>{car.mileage}</span>|<span>{car.functionalities[0]}</span>
           </div>
         </div>
-        <button className="learn-more-btn">Learn more</button>
+        <button className="learn-more-btn" onClick={() => setOpenModal(true)}>
+          Learn more
+        </button>
       </CarItemStyles>
+      {openModal && <Modal closeModal={setOpenModal} />}
     </>
   );
 };
