@@ -4,7 +4,8 @@ const CarItem = ({ car }) => {
   return (
     <>
       <CarItemStyles>
-        <div className="img-container">
+        <div className="photo-container">
+          {/* <button className="favorite-btn" onClick={}></button> */}
           <img src={car.img} alt={`${car.make} - ${car.model}`} />
         </div>
         <div className="info-container">

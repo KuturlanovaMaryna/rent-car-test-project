@@ -6,13 +6,13 @@ export const CarItemStyles = styled.li`
   flex-direction: column;
   align-items: stretch;
 
-  .img-container {
+  .photo-container {
     max-width: 100%;
     margin-bottom: 14px;
     position: relative;
   }
 
-  .img-container img {
+  .photo-container img {
     width: 100%;
     height: 268px;
     background: linear-gradient(
@@ -59,11 +59,11 @@ export const CarItemStyles = styled.li`
     color: rgba(18, 20, 23, 0.5);
   }
 
-  .more-info-container span {
+  .more-info span {
     margin-right: 6px;
   }
 
-  .more-info-container span:not(:nth-child(4n + 1)) {
+  .more-info span:not(:nth-child(4n + 1)) {
     margin-left: 6px;
   }
 

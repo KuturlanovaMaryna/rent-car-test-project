@@ -7,7 +7,7 @@ export const instance = axios.create({
 
 export const getAllCars = createAsyncThunk(
   'cars/getAll',
-  async (limit, thunkAPI) => {
+  async (_, thunkAPI) => {
     try {
       const { data } = await instance.get(`/adverts`);
       return data;

@@ -1,0 +1,88 @@
+.filterContainer {
+    padding-bottom: 4px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 18px;
+}
+
+.label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.select {
+    padding: 14px 18px;
+    border: 0px transparent;
+    border-radius: 14px;
+    background-color: #f7f7fb;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+}
+
+.leftInput {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+    width: 160px;
+    height: 48px;
+    border: 0px transparent;
+    background-color: #f7f7fb;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+.rightInput {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+    width: 160px;
+    height: 48px;
+    border: 0px transparent;
+    background-color: #f7f7fb;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+.filterBtn {
+    margin-top: auto;
+    height: 48px;
+    padding: 14px 44px;
+    border: solid 0px transparent;
+    border-radius: 16px;
+    background-color: #3470ff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.clearFilter {
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border: solid 0px transparent;
+    border-radius: 50%;
+    background-color: #3470ff;
+}
+
+.filterBtn:hover,
+.clearFilter:hover {
+    background-color: #0b44cd;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #3470ff;
+    transform: scale(1.02);
+}

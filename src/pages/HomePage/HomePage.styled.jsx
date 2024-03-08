@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import background from '../../assets/20945729.jpg';
+import background from '../../assets/backgroundhome.jpg';
 
 export const Container = styled.div`
   height: 100vh;

@@ -26,7 +26,6 @@ const CatalogPage = () => {
       ) : (
         <>
           <CarsList cars={cars} />
-          <button className="load-more-btn">Load more</button>
         </>
       )}
     </Container>
