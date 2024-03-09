@@ -16,3 +16,15 @@ export const getAllCars = createAsyncThunk(
     }
   }
 );
+export const FilteredCars = createAsyncThunk(
+  'get/filteredCars',
+  async (data, thunkApi) => {
+    const url = `https://65e86d994bb72f0a9c4f4d30.mockapi.io/adverts?filter=${data}`;
+    try {
+      const { data } = await axios.get(url);
+      return data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err.message);
+    }
+  }
+);

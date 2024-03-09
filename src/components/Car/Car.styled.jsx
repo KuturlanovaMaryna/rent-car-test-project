@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { PiHeartThin } from 'react-icons/pi';
+import { PiHeartStraightFill } from 'react-icons/pi';
 
 export const CarItemStyles = styled.li`
   width: calc((100% - 87px) / 4);
@@ -85,4 +87,14 @@ export const CarItemStyles = styled.li`
   .learn-more-btn:focus {
     background-color: background: #0B44CD;
   }
+`;
+export const FavoriteIcon = styled(PiHeartStraightFill)`
+  width: 18px;
+  height: 18px;
+  color: #3470ff;
+`;
+export const NotFavoriteIcon = styled(PiHeartThin)`
+  width: 18px;
+  height: 18px;
+  color: white;
 `;

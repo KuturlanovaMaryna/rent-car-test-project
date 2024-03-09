@@ -8,7 +8,8 @@ import {
 } from '../../redux/cars/cars.selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import CarsList from '../../components/CarsList/CarsList';
-import { getAllCars } from '../../redux/cars/cars.reducer';
+import { getAllCars, FilteredCars } from '../../redux/cars/cars.reducer';
+import FiltersForm from '../../components/Filter/Filter';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -19,12 +20,16 @@ const CatalogPage = () => {
     dispatch(getAllCars());
   }, [dispatch]);
 
+  const onFilterSubmit = (value) => {
+    dispatch(FilteredCars(value));
+  };
   return (
     <Container>
       {isLoading ? (
         <Loader />
       ) : (
         <>
+          <FiltersForm onClick={onFilterSubmit} />
           <CarsList cars={cars} />
         </>
       )}

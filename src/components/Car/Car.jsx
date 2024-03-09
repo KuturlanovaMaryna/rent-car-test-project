@@ -1,14 +1,21 @@
 import Modal from '../Modal/Modal';
-import { CarItemStyles } from './Car.styled';
+import { CarItemStyles, NotFavoriteIcon, FavoriteIcon } from './Car.styled';
 import { useState } from 'react';
 
 const CarItem = ({ car }) => {
   const [openModal, setOpenModal] = useState(false);
+  const [isFavorite, setisFavorite] = useState(false);
+  const handleToggleisFavorite = () => {
+    setisFavorite(!isFavorite);
+  };
   return (
     <>
       <CarItemStyles>
         <div className="photo-container">
-          {/* <button className="favorite-btn" onClick={}></button> */}
+          <button className="favorite-btn" onClick={handleToggleisFavorite}>
+            {!isFavorite ? <NotFavoriteIcon size={18} /> : <FavoriteIcon />}
+          </button>
+
           <img src={car.img} alt={`${car.make} - ${car.model}`} />
         </div>
         <div className="info-container">
@@ -31,7 +38,7 @@ const CarItem = ({ car }) => {
           Learn more
         </button>
       </CarItemStyles>
-      {openModal && <Modal closeModal={setOpenModal} />}
+      {openModal && <Modal car={car} closeModal={setOpenModal} />}
     </>
   );
 };
