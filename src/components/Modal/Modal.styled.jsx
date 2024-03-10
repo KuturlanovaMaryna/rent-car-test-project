@@ -5,8 +5,6 @@ export const StyledModal = styled.div`
   z-index: 1600;
   position: fixed;
   top: 0;
-  // right: 0;
-  // bottom: 0;
   left: 0;
   overflow: hidden;
   width: 100vw;
@@ -15,34 +13,35 @@ export const StyledModal = styled.div`
   &:hover {
     cursor: pointer;
   }
-  .modal {
-    width: 90%;
-    max-width: 541px;
-    height: 80%;
-    background-color: white;
-    border-radius: 24px;
-    position: absolute;
-    overflow: hidden;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    &:hover {
-      cursor: auto;
-    }
+`;
+export const ModalBlok = styled.div`
+  width: 90%;
+  max-width: 541px;
+  min-height: 70%;
+  background-color: white;
+  border-radius: 24px;
+  position: absolute;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &:hover {
+    cursor: auto;
   }
 `;
-export const CloseIcon = styled(GrClose)`
+export const CloseButton = styled.button`
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 24px;
-  height: 24px;
-  stroke: black;
   transition: stroke 300ms linear;
   cursor: pointer;
   background-color: transparent;
-
   border: none;
+`;
+export const CloseIcon = styled(GrClose)`
+  width: 24px;
+  height: 24px;
+  stroke: black;
 `;
 export const MoreInfoCarStyles = styled.div`
   padding: 40px;
@@ -55,30 +54,10 @@ export const MoreInfoCarStyles = styled.div`
     width: 100%;
   }
 
-  .main-info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-bottom: 14px;
-    max-width: 277px;
-  }
-
-  .main-info-container .color-title {
-    color: rgba(52, 112, 255, 1);
-  }
-
-  .main-info-container h2,
-  .main-info-container p {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.33;
-    color: var(--primary-text-color);
-  }
-
   .more-info-container {
     font-size: 12px;
     line-height: 1.5;
-    color: var(--secondary-text-color);
+    color: rgba(18, 20, 23, 0.5);
   }
 
   .more-info-container span {
@@ -89,19 +68,14 @@ export const MoreInfoCarStyles = styled.div`
     margin-left: 6px;
   }
 
-  .description {
-    font-size: 14px;
-    line-height: 1.43;
-  }
-
   .access span {
     font-size: 12px;
     line-height: 1.5;
-    color: var(--secondary-text-color);
+    color: rgba(18, 20, 23, 0.5);
   }
   .access-title,
   .rent-title {
-    color: var(--primary-text-color);
+    color: #121417;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.43;
@@ -124,30 +98,50 @@ export const MoreInfoCarStyles = styled.div`
   }
 
   .colorize {
-    font-family: 'Montserrat';
     font-weight: 600;
     font-size: 12px;
     line-height: 1.5;
     color: rgba(52, 112, 255, 1);
   }
+`;
+export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 14px;
+  max-width: 277px;
 
-  .rent-btn {
-    display: block;
-    background-color: var(--btn-bg-color);
-    padding: 12px 50px;
-    color: var(--btn-text-color);
-    text-decoration: none;
-    width: 168px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.5;
-    border-radius: 12px;
-    margin-top: 24px;
-    transition: background-color var(--main-cubic);
+  .color-title {
+    color: rgba(52, 112, 255, 1);
+
+   h2,
+   p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.33;
+    color: #121417;
   }
+`;
+export const Description = styled.div`
+  font-size: 14px;
+  line-height: 1.43;
+`;
+export const RentButton = styled.a`
+  display: block;
+  background-color: #3470ff;
+  padding: 12px 50px;
+  color: #ffffff;
+  text-decoration: none;
+  width: 168px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 12px;
+  margin-top: 24px;
+  transition: background-color 250ms linear;
 
-  .rent-btn:hover,
-  .rent-btn:focus {
-    background-color: var(--btn-hover-bg-color);
+  :hover,
+  :focus {
+    background-color: #0b44cd;
   }
 `;

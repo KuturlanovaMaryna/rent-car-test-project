@@ -1,5 +1,14 @@
 import { useEffect } from 'react';
-import { StyledModal, CloseIcon, MoreInfoCarStyles } from './Modal.styled';
+import {
+  StyledModal,
+  CloseIcon,
+  MoreInfoCarStyles,
+  ModalBlok,
+  CloseButton,
+  InfoContainer,
+  Description,
+  RentButton,
+} from './Modal.styled';
 
 const Modal = ({ car, closeModal }) => {
   useEffect(() => {
@@ -26,13 +35,13 @@ const Modal = ({ car, closeModal }) => {
 
   return (
     <StyledModal onClick={handleOverayClick}>
-      <div className="modal">
-        <button onClick={() => closeModal(false)} className="closeBtn">
+      <ModalBlok>
+        <CloseButton onClick={() => closeModal(false)} className="closeBtn">
           <CloseIcon />
-        </button>
+        </CloseButton>
         <MoreInfoCarStyles>
-          <img src={car.img} alt={`${car.make} - ${car.model} - ${car.type}`} />
-          <div className="main-info-container">
+          <img src={car.img} alt={`${car.make} - ${car.model}`} />
+          <InfoContainer>
             <h2>
               {car.make} <span className="color-title">{car.model},</span>{' '}
               {car.year}
@@ -44,8 +53,8 @@ const Modal = ({ car, closeModal }) => {
               <span>Fuel Consumption{car.fuelConsumption}</span>|
               <span>Engine Size: {car.engineSize}</span>
             </div>
-          </div>
-          <p className="description">{car.description}</p>
+          </InfoContainer>
+          <Description>{car.description}</Description>
           <div className="access-func">
             <h3 className="access-title">Accessories and functionalities:</h3>
             <div className="access">
@@ -87,11 +96,9 @@ const Modal = ({ car, closeModal }) => {
               </p>
             </div>
           </div>
-          <a className="rent-btn" href="tel:++380730000000">
-            Rental car
-          </a>
+          <RentButton href="tel:++380730000000">Rental car</RentButton>
         </MoreInfoCarStyles>
-      </div>
+      </ModalBlok>
     </StyledModal>
   );
 };

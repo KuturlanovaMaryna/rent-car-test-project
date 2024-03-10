@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllCars, FilteredCars } from '../../../src/redux/cars/cars.reducer';
+import {
+  getAllCars,
+  FilteredCars,
+  // addToFavorite,
+  // removeFromFavorite,
+} from '../../../src/redux/cars/cars.reducer';
 
 const initialState = {
   carsData: null,
@@ -39,5 +44,4 @@ const carsSlice = createSlice({
       });
   },
 });
-
-export const carReducer = carsSlice.reducer;
+export default carsSlice.reducer;

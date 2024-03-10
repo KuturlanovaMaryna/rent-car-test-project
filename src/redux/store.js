@@ -10,17 +10,20 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { carReducer } from '../redux/cars/cars.slice';
+import carsSlice from './cars/cars.slice';
+import favoritesSlice from './favorite.slice';
 
-const persistConfig = {
-  key: 'carrent',
+const PersistConfig = {
+  key: 'favorites',
   storage,
-  whitelist: ['cars'],
+  whitelist: ['favorites'],
 };
+const PersistedReducer = persistReducer(PersistConfig, favoritesSlice);
 
 export const store = configureStore({
   reducer: {
-    cars: persistReducer(persistConfig, carReducer),
+    cars: carsSlice,
+    favorites: PersistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

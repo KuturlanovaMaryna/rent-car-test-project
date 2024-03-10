@@ -1,20 +1,32 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 500px;
+export const FavoritesPageStyles = styled.section`
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 85vh;
 `;
+export const Container = styled.div`
+  max-width: 1440px;
+  padding-left: 128px;
+  padding-right: 128px;
+  margin-left: auto;
+  margin-right: auto;
 
+  .li {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 4px;
+  }
+`;
 export const Title = styled.h1`
-  margin: 0;
-  margin-right: 10px;
-  color: #ffffff;
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
+  text-align: center;
+  font-size: 38px;
+  line-height: 1.5;
+  color: rgba(52, 112, 255, 1);
+`;
+export const AditionalText = styled.p`
+  text-align: center;
+  font-size: 34px;
+  margin-top: 50px;
+  color: rgba(52, 112, 255, 1);
 `;

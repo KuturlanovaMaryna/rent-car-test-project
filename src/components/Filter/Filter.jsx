@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { StyledInputForm } from './Filter.styled';
+import {
+  SearchButton,
+  SelectedForm,
+  StyledInputForm,
+  TextInput,
+} from './Filter.styled';
 
 const brands = [
   'Buick',
@@ -36,11 +41,10 @@ const FiltersForm = ({ onClick }) => {
   return (
     <StyledInputForm>
       <div onClick={() => setOpen(!open)}>
-        <div className="formSelect">
-          {selected ? selected : 'Select a brand'}
-        </div>
+        <TextInput>Car brand</TextInput>
+        <SelectedForm>{selected ? selected : 'Select a brand'}</SelectedForm>
 
-        <ul className={`formDrop ${open ? 'visible' : 'hidden'}`}>
+        <ul className={`dropDown ${open ? 'visible' : 'hidden'}`}>
           {brands.map((brand) => (
             <li
               key={brand}
@@ -57,9 +61,7 @@ const FiltersForm = ({ onClick }) => {
           ))}
         </ul>
       </div>
-      <button className="searchbtn" onClick={handleClick}>
-        Search
-      </button>
+      <SearchButton onClick={handleClick}>Search</SearchButton>
     </StyledInputForm>
   );
 };

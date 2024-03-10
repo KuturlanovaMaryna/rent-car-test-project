@@ -17,6 +17,7 @@ export const LoadMoreBtn = styled.button`
   margin-right: auto;
   margin-left: auto;
   margin-top: 100px;
+  margin-bottom: 150px;
   transition: color 300ms linear;
 
   &:hover,

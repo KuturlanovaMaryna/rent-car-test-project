@@ -8,19 +8,16 @@ export const CarItemStyles = styled.li`
   flex-direction: column;
   align-items: stretch;
 
-  .photo-container {
+  .img-container {
     max-width: 100%;
     margin-bottom: 14px;
     position: relative;
   }
 
-  .photo-container img {
+  .img-container img {
     width: 100%;
     height: 268px;
-    background: linear-gradient(
-      rgba(18, 20, 23, 0.5),
-      rgba(18, 20, 23, 0)
-    );
+    background: linear-gradient(rgba(18, 20, 23, 0.5), rgba(18, 20, 23, 0));
     border-radius: 14px;
   }
 
@@ -85,7 +82,7 @@ export const CarItemStyles = styled.li`
 
   .learn-more-btn:hover,
   .learn-more-btn:focus {
-    background-color: background: #0B44CD;
+    background-color: #0b44cd;
   }
 `;
 export const FavoriteIcon = styled(PiHeartStraightFill)`

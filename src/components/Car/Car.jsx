@@ -1,19 +1,25 @@
 import Modal from '../Modal/Modal';
 import { CarItemStyles, NotFavoriteIcon, FavoriteIcon } from './Car.styled';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsFavorites } from '../../redux/favorite.selectors';
+import { addToFavorite, removeFromFavorite } from '../../redux/favorite.slice';
 
 const CarItem = ({ car }) => {
   const [openModal, setOpenModal] = useState(false);
-  const [isFavorite, setisFavorite] = useState(false);
-  const handleToggleisFavorite = () => {
-    setisFavorite(!isFavorite);
+  const dispatch = useDispatch();
+  const favoriteCars = useSelector(selectIsFavorites);
+  const isChecked = favoriteCars?.some((favorite) => favorite.id === car.id);
+
+  const handleToggleFavorite = () => {
+    dispatch(isChecked ? removeFromFavorite(car) : addToFavorite(car));
   };
   return (
     <>
       <CarItemStyles>
-        <div className="photo-container">
-          <button className="favorite-btn" onClick={handleToggleisFavorite}>
-            {!isFavorite ? <NotFavoriteIcon size={18} /> : <FavoriteIcon />}
+        <div className="img-container">
+          <button className="favorite-btn" onClick={handleToggleFavorite}>
+            {!isChecked ? <NotFavoriteIcon size={18} /> : <FavoriteIcon />}
           </button>
 
           <img src={car.img} alt={`${car.make} - ${car.model}`} />
